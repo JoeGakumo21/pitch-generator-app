@@ -12,7 +12,7 @@ import markdown2
 # Views
 
 @main.route('/')
-# @login_required
+@login_required
 def index():
 
     '''
@@ -23,19 +23,9 @@ def index():
     # Getting popular movie
    
         
-    return render_template('pitches.html')
+    return render_template('index.html')
 
-@main.route('/pitches')
-def pitches():
 
-    '''
-    View movie page function that returns the movie details page and its data
-    '''
-    title="Welcome here"
-    # reviews = Review.get_reviews(movie.id)
-    
-
-    return render_template('pitches.html',title=title)
 
 @main.route('/user/<uname>')
 @login_required
