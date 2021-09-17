@@ -22,7 +22,7 @@ def index():
     # Getting popular movie
    
         
-    return render_template('index.html')
+    
 
 
 
