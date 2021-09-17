@@ -26,6 +26,17 @@ def index():
     return render_template('index.html')
 
 
+@main.route('/pitch')
+def pitches():
+  pitches = Pitch.query.all()
+  brand = Pitch.query.filter_by(category='Brand').all()
+  product = Pitch.query.filter_by(category='Product').all()
+  project = Pitch.query.filter_by(category='Project').all()
+  investor = Pitch.query.filter_by(category='Investor').all()
+
+  return render_template('pitch.html',pitches=pitches,brand=brand,product=product,project=project,investor=investor)  
+
+
 
 @main.route('/user/<uname>')
 @login_required
