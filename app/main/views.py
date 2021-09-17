@@ -5,7 +5,7 @@ from ..models import User
 from flask_login import login_required,current_user
 from .. import db,photos
 import markdown2  
-from ..request import get_pitches;
+
 
 
 
@@ -23,7 +23,7 @@ def index():
     # Getting popular movie
    
         
-    return render_template('index.html')
+    return render_template('pitches.html')
 
 @main.route('/pitches')
 def pitches():
@@ -31,11 +31,11 @@ def pitches():
     '''
     View movie page function that returns the movie details page and its data
     '''
-    
+    title="Welcome here"
     # reviews = Review.get_reviews(movie.id)
-    pitches=get_pitches()
+    
 
-    return render_template('pitches.html',pitches=pitches)
+    return render_template('pitches.html',title=title)
 
 
 
