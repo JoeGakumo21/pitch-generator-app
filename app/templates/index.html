@@ -10,17 +10,25 @@
     {% block styles%}
     {{ super() }}
     <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}"/>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}"/>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}"/>
     {% endblock %}
     {% block scripts%}
     {{ super() }}
     <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
     {% endblock %}
-    
+        
 </head>
 <body>
     {%block content%}
+  <style>
+      body{
+          background: url("{{url_for('static',filename='images/wallpaper-photos-31.jpg')}}") center/cover no-repeat;
+      }
+  </style>
     <div class="container">
-        <div class="jumbotron">     
+        <h2 class="text-warning text-center">Welcome to Pitch website, designed by Joe Gakumo</h2>
+        <div class="">     
             <div class="row">
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                     <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
@@ -28,6 +36,9 @@
                         <div class="card-body">
                             <h5 class="card-title">Primary card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <button class="btn bg-light">See More</button>
+                           <a href=""><i class="bi bi-hand-thumbs-up-fill"></i></a>
+                            <a href=""><i class="bi bi-hand-thumbs-down-fill bi-danger"></i></a>
                         </div>
                     </div>
                 </div>
@@ -60,7 +71,7 @@
                 </div>
             </div>    
         </div>
-        <div class="jumbotron">     
+        <div class="">     
             <div class="row">
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                     <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
