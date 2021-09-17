@@ -1,10 +1,10 @@
 from flask import render_template,request,redirect,url_for,abort
 from . import main
-from .forms import ReviewForm, UpdateProfile
-from ..models import User
 from flask_login import login_required,current_user
 from .. import db,photos
 import markdown2  
+from .forms import  UpdateProfile,PitchForm,CommentForm
+from ..models import User,Pitch,Comment
 
 
 
@@ -97,9 +97,27 @@ def new_pitch():
 
     return redirect(url_for('main.pitches',id=new_pitch.id))
 
-  return render_tem
+  return render_template('create_pitch.html',title='Add Your Pitch',pitch_form=form)
 
+@main.route('/comments/<int:id>',methods=['GET','POST'])
+def comment_review(id):
+  comment = CommentForm()
+  pitch=Pitch.query.get(id)
+
+  if comment.validate_on_submit():
+    content = comment.comment.data
     
+    new_post = Comment(comment=content,title=pitch.id)
+
+    db.session.add(new_post)
+    db.session.commit()  
+    
+  post = 'Post Your Comment'
+  user=User.query.get(id)
+  comments = Comment.query.filter_by(title=pitch.id).all()  
+  if pitch is None:
+    abort(404)
+  return render_template('comments.html',comment_form=comment,post=post,comments=comments,pitch=pitch,user=user)          
 
 
 
