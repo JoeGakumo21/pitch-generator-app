@@ -35,7 +35,8 @@
                         <div class="card-body">
                             <h5 class="card-title">Primary card title</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <button class="btn bg-light">See More</button>
+                            <a href="{{ url_for('main.new_pitch') }}" ><button class="btn bg-light">See More</button></a>
+                        
                            <a href=""><i class="bi bi-hand-thumbs-up-fill ml-5" style="font-size: 2rem; color: rgb(173, 31, 31);"></i></a>0
                           <a href=""><i class="bi bi-hand-thumbs-down-fill bi-danger" style="font-size: 2rem;color: black;"></i></a>0
                         </div>
@@ -109,7 +110,7 @@
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>   
     </div>
     {%endblock%}
 </body>

@@ -14,27 +14,7 @@
           <div class="col-md-8">
             <div class="row pitch-section">
               <h3 class="cats">Motivation Pitch</h3>
-              {% for pitch in brand %}
-              <div class="card peach-gradient color-block mb-3 mx-auto z-depth-1">
-                <h4 class="card-title">{{pitch.title}}</h4>
-                <p class="card-body">" {{pitch.pitch}}</p>
-                <p class="card-footer"><a href="/comments/{{pitch.id}}"><button class="btn btn-light">Comment</button></a></p>
-              </div>
-              {% endfor %}
-            </div>
-            <!-- <div class="row">
-              <h3 class="cats">Inspiration</h3>
-              {% for pitch in product %}
-              <div class="card peach-gradient color-block mb-3 mx-auto z-depth-1">
-                <h4 class="card-title">{{pitch.title}}</h4>
-                <p class="card-body">" {{pitch.pitch}}</p>
-                <p class="card-footer"><a href="/comments/{{pitch.id}}"><button class="btn btn-light">Comment</button></a></p>
-              </div>
-              {% endfor %}
-            </div> -->
-            <!-- <div class="row">
-              <h3 class="cats">Love Pitches</h3>
-              {% for pitch in project %}
+              {% for pitch in Xactly %}
               <div class="card peach-gradient color-block mb-3 mx-auto z-depth-1">
                 <h4 class="card-title">{{pitch.title}}</h4>
                 <p class="card-body">" {{pitch.pitch}}</p>
@@ -43,15 +23,15 @@
               {% endfor %}
             </div>
             <div class="row">
-              <h3 class="cats">Investor</h3>
-              {% for pitch in investor %}
+              <h3 class="cats">Inspiration</h3>
+              {% for pitch in product %}
               <div class="card peach-gradient color-block mb-3 mx-auto z-depth-1">
                 <h4 class="card-title">{{pitch.title}}</h4>
                 <p class="card-body">" {{pitch.pitch}}</p>
                 <p class="card-footer"><a href="/comments/{{pitch.id}}"><button class="btn btn-light">Comment</button></a></p>
               </div>
               {% endfor %}
-            </div> -->
+            </div> 
           </div>
           <div class="col-md-2"></div>
         </div>

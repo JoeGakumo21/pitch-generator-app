@@ -10,7 +10,7 @@ from ..models import User,Pitch,Comment
 # Views
 
 @main.route('/')
-@login_required
+# @login_required
 def index():
 
     '''
@@ -26,12 +26,12 @@ def index():
 @main.route('/pitch')
 def pitches():
   pitches = Pitch.query.all()
-  brand = Pitch.query.filter_by(category='Brand').all()
+  Xactly = Pitch.query.filter_by(category='Xactly').all()
   product = Pitch.query.filter_by(category='Product').all()
   project = Pitch.query.filter_by(category='Project').all()
   investor = Pitch.query.filter_by(category='Investor').all()
 
-  return render_template('pitch.html',pitches=pitches,brand=brand,product=product,project=project,investor=investor)  
+  return render_template('pitch.html',pitches=pitches,Xactly=Xactly,product=product,project=project,investor=investor)  
 
 
 
