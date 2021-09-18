@@ -4,6 +4,9 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    
+    <link rel="stylesheet" href="{{url_for('static',filename='navbar.css')}}"/>
+   
   </head>
   <body>
     <div class="container">
@@ -18,18 +21,19 @@
                 </button>            </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/">Pitches</a></li>
+                    <li><a href="/" style="color: black;font-style: italic;font-size: 3rem;text-decoration: none;">Pitches</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right d-inline">
+                <ul class="nav navbar-nav navbar-right d-inline" style="font-size: 2.5rem;">
                  
                   {% if current_user.is_authenticated %}
-                  <li><a href="{{ url_for('main.new_pitch') }}">New pitch</a></li>
-                  <li><a href="#">{{current_user.username}}</a></li>
-                  <li><a href="{{url_for('main.profile',uname = current_user.username)}}">Profile</a></li>
-                  <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
+                  <li><a href="#"  style="color: green;font-style: italic;text-decoration: none;"><span style="color: black;">signed as: </span>{{current_user.username}}</a></li>
+                  <li><a href="{{ url_for('main.new_pitch') }}" style="color: black;font-style: italic;text-decoration: none;">New pitch</a></li>
+                 
+                  <li><a href="{{url_for('main.profile',uname = current_user.username)}}"  style="color: black;font-style: italic;text-decoration: none;">Profile</a></li>
+                  <li><a href="{{url_for('auth.logout')}}"  style="color: black;font-style: italic;text-decoration: none;">Sign out</a></li>
                   {% else %}
-                  <li><a href="#">Guest</a></li>
-                  <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
+                  <li><a href="#" style="color: black;font-style: italic;text-decoration: none;">User</a></li>
+                  <li><a href="{{url_for('auth.login')}}"  style="color: black;font-style: italic;text-decoration: none;">Sign in</a></li>
                   {%endif%}
                 </ul>
             </div>

@@ -2,10 +2,8 @@ from flask import render_template,request,redirect,url_for,abort
 from . import main
 from flask_login import login_required,current_user
 from .. import db,photos
-import markdown2  
 from .forms import  UpdateProfile,PitchForm,CommentForm
 from ..models import User,Pitch,Comment
-
 
 
 
@@ -21,8 +19,7 @@ def index():
     '''
 
     # Getting popular movie
-   
-        
+
     return render_template('index.html')
 
 
@@ -118,10 +115,6 @@ def comment_review(id):
   if pitch is None:
     abort(404)
   return render_template('comments.html',comment_form=comment,post=post,comments=comments,pitch=pitch,user=user)          
-
-
-
-
 
 
 

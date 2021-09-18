@@ -17,6 +17,8 @@ manager.add_command('db', MigrateCommand)
 
 @manager.command
 
+
+
 def test():
 
     """
