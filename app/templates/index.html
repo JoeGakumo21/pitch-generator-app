@@ -149,4 +149,24 @@
     </div>
     {%endblock%}
 </body>
+
+<script type="text/javascript">
+    let like = document.querySelector('#like');
+    let dislike =document.querySelector('#dislike');
+    let input1 = document.querySelector('#input1');
+    let input2 = document.querySelector('#input2');
+    
+  
+    like.addEventListener('click',()=>{
+      input1.value = parseInt(input1.value) + 1;
+      input1.style.color = "#12ff00";
+  
+    })
+  
+    dislike.addEventListener('click',()=>{
+      input2.value = parseInt(input2.value) - 1;
+      input2.style.color = "#12ff00";
+  
+    })
+</script>    
 </html>
