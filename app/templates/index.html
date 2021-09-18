@@ -38,8 +38,10 @@
                             <p class="card-text">The Xactly pitch focuses on the problem their customer has — an important part of a successful pitch. I discussed the "me monster" above, and you should be wary of it when creating a pitch. Xactly does this well. The trick is to address your customer's problems and concerns and highlight how your product or service solves these problems. In the case of Xactly, it's about getting people off cumbersome legacy systems and Excel spreadsheets.</p>
                             <a href="{{ url_for('main.new_pitch') }}" ><button class="btn bg-light">Create and Comment</button></a>
                              <br>
-                           <a href=""><i class="bi bi-hand-thumbs-up-fill ml-5" style="font-size: 2rem; color: rgb(173, 31, 31);margin-left: 2rem;"></i></a>0
-                          <a href=""><i class="bi bi-hand-thumbs-down-fill bi-danger" style="font-size: 2rem;color: black;"></i></a>0
+                            <button id="like" style="font-size: 1.3rem; background: none; color: rgb(105, 194, 17); padding: 0 1rem; border: none;">
+                               
+                           <a href=""><i class="bi bi-hand-thumbs-up-fill ml-5" id="like" style="font-size: 2rem; color: rgb(173, 31, 31);margin-left: 2rem;"></i></a>0
+                          <a href=""><i class="bi bi-hand-thumbs-down-fill bi-danger" id="dislike" style="font-size: 2rem;color: black;"></i></a>0
                         </div>
                     </div>
                 </div>
@@ -149,6 +151,8 @@
     </div>
     {%endblock%}
 </body>
+  
+</html>
 
 <script type="text/javascript">
     let like = document.querySelector('#like');
@@ -164,9 +168,8 @@
     })
   
     dislike.addEventListener('click',()=>{
-      input2.value = parseInt(input2.value) - 1;
+      input2.value = parseInt(input2.value) + 1;
       input2.style.color = "#12ff00";
   
     })
-</script>    
-</html>
+</script>  
