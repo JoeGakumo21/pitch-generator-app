@@ -12,10 +12,24 @@
 # setup Installation
 * Copy the github repository url
 *  Clone to your computer
-Open terminal and navigate to the directory of the project you just cloned to your computer
-Run the following command to start the server using virtual environment
-python3.8 -m venv --without-pip virtual
-source virtual/bin/activate
+* Open terminal and navigate to the directory of * the project you just cloned to your computer
+* Run the following command to start the server * * using virtual environment
+* python3.8 -m venv --without-pip virtual
+* source virtual/bin/activate
 curl https://bootstrap.pypa.io/get-pip.py | python
-pip install --force-reinstall flask==1.1.2
-chmod a+x start.sh
+* pip install --force-reinstall flask==1.1.2
+* chmod a+x start.sh
+# Technology
+* HTML
+* CSS
+- Bootstrap
+- Python
+- Flask
+* markdown2
+# live link
+Access this site via <a href=" ">Pitch app</a>
+<!-- screenshot -->
+# screenshot
+<img src="app/static/images/pitch3.png">
+<img src="app/static/images/pitch2.png">
+<img src="app/static/images/pitch1.png">
