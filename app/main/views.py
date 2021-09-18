@@ -27,11 +27,10 @@ def index():
 def pitches():
   pitches = Pitch.query.all()
   Xactly = Pitch.query.filter_by(category='Xactly').all()
-  Vidyard = Pitch.query.filter_by(category='Vidyard').all()
-  project = Pitch.query.filter_by(category='Project').all()
-  investor = Pitch.query.filter_by(category='Investor').all()
+  product = Pitch.query.filter_by(category='Product').all()
+ 
 
-  return render_template('pitch.html',pitches=pitches,Xactly=Xactly,Vidyard=Vidyard,project=project,investor=investor)  
+  return render_template('pitch.html',pitches=pitches,Xactly=Xactly,product=product)  
 
 
 

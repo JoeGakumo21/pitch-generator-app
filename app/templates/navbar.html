@@ -30,9 +30,9 @@
                   <li><a href="{{ url_for('main.new_pitch') }}" style="color: black;font-style: italic;text-decoration: none;">New pitch</a></li>
                  
                   <li><a href="{{url_for('main.profile',uname = current_user.username)}}"  style="color: black;font-style: italic;text-decoration: none;">Profile</a></li>
-                  <li><a href="{{url_for('auth.logout')}}"  style="color: black;font-style: italic;text-decoration: none;"><i class="bi bi-box-arrow-in-right" style="color: red;font-size: 4rem;"></i></a></li>
+                  <li><a href="{{url_for('auth.logout')}}"  style="color: black;font-style: italic;text-decoration: none;">SignOut</i></a></li>
                   {% else %}
-                  <li><a href="#" style="color: black;font-style: italic;text-decoration: none;">User<i class="bi bi-person-bounding-box" style="color: whitesmoke;"></i></a></li>
+                  <li><a href="#" style="color: black;font-style: italic;text-decoration: none;">User</a></li>
                   <li><a href="{{url_for('auth.login')}}"  style="color: black;font-style: italic;text-decoration: none;">Sign in</a></li>
                   {%endif%}
                 </ul>
