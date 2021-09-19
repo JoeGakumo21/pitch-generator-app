@@ -10,7 +10,7 @@ from ..models import User,Pitch,Comment
 # Views
 
 @main.route('/')
-@login_required
+# @login_required
 def index():
 
     '''
