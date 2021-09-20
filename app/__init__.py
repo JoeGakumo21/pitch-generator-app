@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, app
 from flask_bootstrap import Bootstrap
 from config import config_options
 from flask_sqlalchemy import SQLAlchemy
@@ -9,8 +9,9 @@ from flask_simplemde import SimpleMDE
 
 
 
+
 bootstrap = Bootstrap()
-db = SQLAlchemy()
+db = SQLAlchemy(app)
 mail = Mail()
 photos = UploadSet('photos',IMAGES)
 simple = SimpleMDE()
