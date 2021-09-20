@@ -15,7 +15,9 @@
     {% block scripts%}
     {{ super() }}
     <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/script.js')}}"></script>
     {% endblock %}
+
         
 </head>
 <body>
@@ -39,10 +41,11 @@
                             <p class="card-text">The Xactly pitch focuses on the problem their customer has — an important part of a successful pitch. I discussed the "me monster" above, and you should be wary of it when creating a pitch. Xactly does this well. The trick is to address your customer's problems and concerns and highlight how your product or service solves these problems. In the case of Xactly, it's about getting people off cumbersome legacy systems and Excel spreadsheets.</p>
                             <a href="{{ url_for('main.new_pitch') }}" ><button class="btn bg-light">Create and Comment</button></a>
                              <br>
-                            <button id="like" style="font-size: 1.3rem; background: none; color: rgb(105, 194, 17); padding: 0 1rem; border: none;">
+                            <!-- <button id="like"  style="font-size: 1.3rem; background: none; color: rgb(105, 194, 17); padding: 0 1rem; border: none;">0</button>
+                            <button id="dislike" onclick="downvote()" style="font-size: 1.3rem; background: none; color: rgb(105, 194, 17); padding: 0 1rem; border: none;">0</button> -->
                                
-                           <a href=""><i class="bi bi-hand-thumbs-up-fill ml-5" id="like" style="font-size: 2rem; color: rgb(173, 31, 31);margin-left: 2rem;"></i></a>0
-                          <a href=""><i class="bi bi-hand-thumbs-down-fill bi-danger" id="dislike" style="font-size: 2rem;color: black;"></i></a>0
+                           <i class="bi bi-hand-thumbs-up-fill ml-5"onclick="upvote()" id="like" style="font-size: 2rem; color: rgb(173, 31, 31);margin-left: 2rem;">0</i>
+                          <i class="bi bi-hand-thumbs-down-fill bi-danger"onclick="downvote()"  id="dislike" style="font-size: 2rem;color: black;">0</i>
                         </div>
                     </div>
                 </div>
@@ -54,8 +57,8 @@
                             <p class="card-text">Vidyard is the key to making remote selling easy. From prospecting to proposals, record and send videos that add a personal touch at all stages of the sales cycle. Email isn’t dead, but it sure is boring. With Vidyard, you can record and send videos in just a few clicks – perfect for busy sales reps trying to break into inboxes or marketers trying to make a splash."</p>
                             <a href="{{ url_for('main.new_pitch') }}" ><button class="btn bg-light">Create and Comment</button></a>
                              <br>
-                           <a href=""><i class="bi bi-hand-thumbs-up-fill ml-5" style="font-size: 2rem; color: rgb(173, 31, 31);margin-left: 2rem;"></i></a>0
-                          <a href=""><i class="bi bi-hand-thumbs-down-fill bi-danger" style="font-size: 2rem;color: black;"></i></a>0
+                             <i class="bi bi-hand-thumbs-up-fill ml-5"onclick="upvote1()" id="like1" style="font-size: 2rem; color: rgb(173, 31, 31);margin-left: 2rem;">0</i>
+                             <i class="bi bi-hand-thumbs-down-fill bi-danger"onclick="downvote1()"  id="dislike1" style="font-size: 2rem;color: black;">0</i>
                         </div>
                     </div>
                 </div>
@@ -67,8 +70,8 @@
                             <p class="card-text">Thrivent Financial is another financial firm that focuses on the buyer in its pitch. Like in the previous pitch, it emphasizes helping prospects do what they most want to do after managing their finances. By implementing a similar strategy, you can craft your pitch so that prospects understand what they can achieve if they do business with you.</p>
                             <a href="{{ url_for('main.new_pitch') }}" ><button class="btn bg-light">Create and Comment</button></a>
                              <br>
-                           <a href=""><i class="bi bi-hand-thumbs-up-fill ml-5" style="font-size: 2rem; color: rgb(173, 31, 31);margin-left: 2rem;"></i></a>0
-                          <a href=""><i class="bi bi-hand-thumbs-down-fill bi-danger" style="font-size: 2rem;color: black;"></i></a>0
+                             <i class="bi bi-hand-thumbs-up-fill ml-5"onclick="upvote1()" id="like1" style="font-size: 2rem; color: rgb(173, 31, 31);margin-left: 2rem;">0</i>
+                             <i class="bi bi-hand-thumbs-down-fill bi-danger"onclick="downvote1()"  id="dislike1" style="font-size: 2rem;color: black;">0</i>
                         </div>
                     </div>
                 </div>
@@ -80,8 +83,8 @@
                             <p class="card-text">Edward Jones, a financial advising firm, creates a personal, resonant pitch by focusing entirely on the prospect or buyer. You rarely hear about them in this pitch, which is another great model to follow when creating your own pitch. While this is geared toward consumers rather than another business, it’s a great example of how you can write a pitch that resonates with your prospects while offering plenty of information about what you do.</p>
                             <a href="{{ url_for('main.new_pitch') }}" ><button class="btn bg-light">Create and Comment</button></a>
                              <br>
-                           <a href=""><i class="bi bi-hand-thumbs-up-fill ml-5" style="font-size: 2rem; color: rgb(173, 31, 31);margin-left: 2rem;"></i></a>0
-                          <a href=""><i class="bi bi-hand-thumbs-down-fill bi-danger" style="font-size: 2rem;color: black;"></i></a>0
+                             <i class="bi bi-hand-thumbs-up-fill ml-5"onclick="upvote1()" id="like1" style="font-size: 2rem; color: rgb(173, 31, 31);margin-left: 2rem;">0</i>
+                             <i class="bi bi-hand-thumbs-down-fill bi-danger"onclick="downvote1()"  id="dislike1" style="font-size: 2rem;color: black;">0</i>
                         </div>
                     </div>
                 </div>
@@ -97,8 +100,8 @@
                             <p class="card-text">In this pitch to businesses and organizations looking for a speaker, Van Jones emphasizes his expertise — then highlights the fact that his reach will apply to everyone who listens to him. In a similar way, you can use the authoritativeness of your business to stand out, then turn around and address any concerns an organization might have about doing business with you. Here, Van Jones subtly addresses the current political climate by emphasizing that his speeches will resonate with anyone regardless of their background.</p>
                             <a href="{{ url_for('main.new_pitch') }}" ><button class="btn bg-light">Create and Comment</button></a>
                              <br>
-                           <a href=""><i class="bi bi-hand-thumbs-up-fill ml-5" style="font-size: 2rem; color: rgb(173, 31, 31);margin-left: 2rem;"></i></a>0
-                          <a href=""><i class="bi bi-hand-thumbs-down-fill bi-danger" style="font-size: 2rem;color: black;"></i></a>0
+                             <i class="bi bi-hand-thumbs-up-fill ml-5"onclick="upvote1()" id="like1" style="font-size: 2rem; color: rgb(173, 31, 31);margin-left: 2rem;">0</i>
+                             <i class="bi bi-hand-thumbs-down-fill bi-danger"onclick="downvote1()"  id="dislike1" style="font-size: 2rem;color: black;">0</i>
                         </div>
                     </div>
                 </div>
@@ -112,8 +115,8 @@
                                 When they discuss how you're being told by analysts what to do, or people who haven't used a product, they highlight a clear disconnect in the market between what you need and what you get. The company allows verified users of products to write reviews and becomes an essential resource for their users.</p>
                             <a href="{{ url_for('main.new_pitch') }}" ><button class="btn bg-light">Create and Comment</button></a>
                              <br>
-                           <a href=""><i class="bi bi-hand-thumbs-up-fill ml-5" style="font-size: 2rem; color: rgb(173, 31, 31);margin-left: 2rem;"></i></a>0
-                          <a href=""><i class="bi bi-hand-thumbs-down-fill bi-danger" style="font-size: 2rem;color: black;"></i></a>0
+                             <i class="bi bi-hand-thumbs-up-fill ml-5"onclick="upvote1()" id="like1" style="font-size: 2rem; color: rgb(173, 31, 31);margin-left: 2rem;">0</i>
+                             <i class="bi bi-hand-thumbs-down-fill bi-danger"onclick="downvote1()"  id="dislike1" style="font-size: 2rem;color: black;">0</i>
                         </div>
                     </div>
                 </div>
@@ -125,8 +128,8 @@
                             <p class="card-text">"Gap Inc. is a leading global retailer with a collection of brands including Old Navy, Gap, Banana Republic, and Athleta. We're committed to serving the needs of our customers while delivering long-term value to our shareholders.”Gap is better known as a clothing brand, but the company behind it, Gap Inc, is a publicly traded firm with multiple successful brands under its belt. In its pitch to its potential investors, Gap Inc emphasizes its dominant position in the marketplace while ensuring that the company will be a secure long-term</p>
                             <a href="{{ url_for('main.new_pitch') }}" ><button class="btn bg-light">Create and Comment</button></a>
                              <br>
-                           <a href=""><i class="bi bi-hand-thumbs-up-fill ml-5" style="font-size: 2rem; color: rgb(173, 31, 31);margin-left: 2rem;"></i></a>0
-                          <a href=""><i class="bi bi-hand-thumbs-down-fill bi-danger" style="font-size: 2rem;color: black;"></i></a>0
+                             <i class="bi bi-hand-thumbs-up-fill ml-5"onclick="upvote1()" id="like1" style="font-size: 2rem; color: rgb(173, 31, 31);margin-left: 2rem;">0</i>
+                             <i class="bi bi-hand-thumbs-down-fill bi-danger"onclick="downvote1()"  id="dislike1" style="font-size: 2rem;color: black;">0</i>
                         </div>
                     </div>
                 </div>
@@ -142,8 +145,8 @@
                                 Merck knows that values and strong scientific foundations drive business decisions in the healthcare industry. They capitalize on that by emphasizing their long history and tying their work into their mission. In that way, it sends a message that resonates with its target audience.</p>
                             <a href="{{ url_for('main.new_pitch') }}" ><button class="btn bg-light">Create and Comment</button></a>
                              <br>
-                           <a href=""><i class="bi bi-hand-thumbs-up-fill ml-5" style="font-size: 2rem; color: rgb(173, 31, 31);margin-left: 2rem;"></i></a>0
-                          <a href=""><i class="bi bi-hand-thumbs-down-fill bi-danger" style="font-size: 2rem;color: black;"></i></a>0
+                             <i class="bi bi-hand-thumbs-up-fill ml-5"onclick="upvote1()" id="like1" style="font-size: 2rem; color: rgb(173, 31, 31);margin-left: 2rem;">0</i>
+                             <i class="bi bi-hand-thumbs-down-fill bi-danger"onclick="downvote1()"  id="dislike1" style="font-size: 2rem;color: black;">0</i>
                         </div>
                     </div>
                 </div>
@@ -155,22 +158,3 @@
   
 </html>
 
-<script type="text/javascript">
-    let like = document.querySelector('#like');
-    let dislike =document.querySelector('#dislike');
-    let input1 = document.querySelector('#input1');
-    let input2 = document.querySelector('#input2');
-    
-  
-    like.addEventListener('click',()=>{
-      input1.value = parseInt(input1.value) + 1;
-      input1.style.color = "#12ff00";
-  
-    })
-  
-    dislike.addEventListener('click',()=>{
-      input2.value = parseInt(input2.value) + 1;
-      input2.style.color = "#12ff00";
-  
-    })
-</script>  

@@ -1,16 +1,8 @@
-from flask.app import Flask
-from flask_sqlalchemy import SQLAlchemy
 from . import db,models
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
 from . import login_manager
 from datetime import datetime
-
-app =Flask(__name__)
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS']= False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'Heroku_Database_URL'
-
-db =SQLAlchemy(app)
 
 
 @login_manager.user_loader
