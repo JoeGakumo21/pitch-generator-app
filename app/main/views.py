@@ -10,7 +10,7 @@ from ..models import User,Pitch,Comment
 # Views
 
 @main.route('/')
-# @login_required
+@login_required
 def index():
 
     '''
@@ -35,7 +35,7 @@ def pitches():
 
 
 @main.route('/user/<uname>')
-# @login_required
+@login_required
 def profile(uname):
     user = User.query.filter_by(username = uname).first()
 
@@ -65,7 +65,7 @@ def update_profile(uname):
 
 
 @main.route('/user/<uname>/update/pic',methods = ['POST'])
-# @login_required
+@login_required
 def update_pic(uname):
     user = User.query.filter_by(username = uname).first()
     if 'photo' in request.files:
@@ -77,7 +77,7 @@ def update_pic(uname):
 
 
 @main.route('/pitch/new',methods = ['GET','POST'])
-# @login_required
+@login_required
 def new_pitch():
   form = PitchForm()
 
